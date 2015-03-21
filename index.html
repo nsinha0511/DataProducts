@@ -44,7 +44,7 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>General Introduction</h2>
+    <h3>General Introduction</h3>
   </hgroup>
   <article data-timings="">
     <p>This application uses user inputs on starting population value, increment rate and the number of years to calculate the projected population at the end of the term. The application uses compunding formulae to calculate the projected population. 
@@ -56,10 +56,10 @@ The country name is not being used for any calculation purposes. However, as a f
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Inputs and Outputs</h2>
+    <h3>Inputs and Outputs</h3>
   </hgroup>
   <article data-timings="">
-    <p>Inputs:</p>
+    <p><strong>Inputs:</strong></p>
 
 <p>The following values are used as input from the user:  </p>
 
@@ -70,7 +70,7 @@ The country name is not being used for any calculation purposes. However, as a f
 <li>Number of years - This is a slider bar input allowing users to select the number of years over which they want the population to be projected.<br></li>
 </ul>
 
-<p>Outputs:</p>
+<p><strong>Outputs:</strong></p>
 
 <ul>
 <li>Predicted Population - Based on the compounding formulae and entered inputs, the estimated final population is calculated. </li>
@@ -82,20 +82,111 @@ The country name is not being used for any calculation purposes. However, as a f
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Illustration of the App</h2>
+    <h3>Illustration of the App (1/2) - User Interface</h3>
   </hgroup>
   <article data-timings="">
-    <pre><code>## Error in eval(expr, envir, enclos): could not find function &quot;slidifyUI&quot;
-</code></pre>
+    <div class="row-fluid">
+  <div class="col-sm-12">
+    <h1>
+      <h3>Predicting Population Growth</h3>
+    </h1>
+  </div>
+  <div class="col-sm-4">
+    <form class="well">
+      <h3>Enter Inputs</h3>
+      <div class="form-group shiny-input-container">
+        <label class="control-label" for="country">Country Name labled id1</label>
+        <div>
+          <select id="country"><option value="India" selected>India</option>
+<option value="UK">UK</option>
+<option value="US">US</option></select>
+          <script type="application/json" data-for="country" data-nonempty="">{}</script>
+        </div>
+      </div>
+      <div class="form-group shiny-input-container">
+        <label for="popstart">Starting Population</label>
+        <input id="popstart" type="number" class="form-control" value="1"/>
+      </div>
+      <div id="grwthrt" class="form-group shiny-input-radiogroup shiny-input-container">
+        <label class="control-label" for="grwthrt">Checkbox labeled id2</label>
+        <div class="shiny-options-group">
+          <div class="radio">
+            <label>
+              <input type="radio" name="grwthrt" id="grwthrt1" value="1" checked="checked"/>
+              <span>No Growth</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="grwthrt" id="grwthrt2" value="2"/>
+              <span>Increasing @ 10%</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="grwthrt" id="grwthrt3" value="3"/>
+              <span>Decreasing @ 1%</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group shiny-input-container">
+        <label for="yrs">Years for Prediction</label>
+        <input id="yrs" type="number" class="form-control" value="1"/>
+      </div>
+    </form>
+  </div>
+</div>
 
-<pre><code>## Error in eval(expr, envir, enclos): could not find function &quot;slidifyUI&quot;
-</code></pre>
+<h4>The actual app has &quot;Years for Prediction&quot; as &quot;SliderInput&quot;. However, it seems there is currently an identified issue with integrating sliderInput into slidify, hence it has been replced by a numeric input.</h4>
 
-<hr>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<h2>Potential Enhancements</h2>
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h3>Illustration of the App (2/2) - Output Interface</h3>
+  </hgroup>
+  <article data-timings="">
+    <div class="row-fluid">
+  <div class="col-sm-8">
+    <h3>Illustrating Inputs</h3>
+    <h4>You entered - Country</h4>
+    <h4>
+      <div id="oid1" class="shiny-html-output"></div>
+    </h4>
+    <h4>You entered - Start Population</h4>
+    <h4>
+      <div id="oid2" class="shiny-html-output"></div>
+    </h4>
+    <h4>You entered - Growth Rate option</h4>
+    <h4>
+      <div id="oid3" class="shiny-html-output"></div>
+    </h4>
+    <h4>You entered - Projected Years</h4>
+    <h4>
+      <div id="oid4" class="shiny-html-output"></div>
+    </h4>
+    <h3>Projected Population - Output</h3>
+    <h4>
+      <div id="oid5" class="shiny-html-output"></div>
+    </h4>
+  </div>
+</div>
 
-<p>The app is a very simple implementation of a compounding formulae. There are  enhancements that could make the app more interesting, i.e.</p>
+<h4><strong>The actual app is located at <a href="http://nsinha.shinyapps.io/shinyapp">http://nsinha.shinyapps.io/shinyapp</a></strong></h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h3><strong>Potential Enhancements</strong></h3>
+  </hgroup>
+  <article data-timings="">
+    <p>The app is a very simple implementation of a compounding formulae. There are  enhancements that could make the app more interesting, i.e.</p>
 
 <ul>
 <li>Integrating data about historical population from a standard web source e.g. UN </li>
@@ -104,16 +195,9 @@ The country name is not being used for any calculation purposes. However, as a f
 <li>Provide relative comparison option with other countries based on additional Country drop down. </li>
 </ul>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+<h3><strong>Learnings</strong></h3>
 
-<slide class="" id="slide-4" style="background:;">
-  <hgroup>
-    <h2>Learnings</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
+<ul>
 <li>Relative ease in building simple shiny apps i.e. without any external data connectivity or complex visualizations</li>
 <li>Integrating Shiny app in Slidify presentations is tricky.i.e. Understanding the widgets, framework, css to control the layout and the integration of the app</li>
 </ul>
@@ -142,14 +226,20 @@ The country name is not being used for any calculation purposes. However, as a f
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Illustration of the App'>
+        data-slide=3 title='Illustration of the App (1/2) - User Interface'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Learnings'>
+        data-slide=4 title='Illustration of the App (2/2) - Output Interface'>
          4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='<strong>Potential Enhancements</strong>'>
+         5
       </a>
     </li>
   </ul>
